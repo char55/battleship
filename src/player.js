@@ -14,7 +14,7 @@ class Player extends React.Component {
   }
 
   nextPlayer() {
-    const Allplayers = ['X', 'O'];
+    const Allplayers = [1, 2];
     this.setState({player: Allplayers[this.state.round % 2]})
     this.newRound(this.state.round)
   }
@@ -28,7 +28,12 @@ class Player extends React.Component {
     return (
       <div>
       <div className="status">{status}</div>
-        <Board player={this.state.player} nextPlayer={this.nextPlayer} round={this.state.round}/>
+        <Board 
+          player={this.state.player} 
+          nextPlayer={this.nextPlayer} 
+          round={this.state.round} 
+          squares={this.props.squares}
+        />
       </div>
     );
   }

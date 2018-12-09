@@ -2,7 +2,7 @@
 
 ## About
 
-This project is a recreation of the "Battleship" game.  Two players face each other and attempt to "sink" the other player's ships.  This project utilizes React.
+This project is a recreation of the "Battleship" game.  Two players face each other and attempt to "sink" the other player's ships.  This project utilizes React.  
 
 ## Features
 

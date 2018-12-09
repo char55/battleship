@@ -27,42 +27,31 @@ class Square extends React.Component {
 class Board extends React.Component {
   constructor(props) {
     super(props);
-    this.state = {
-      squares: Array(9).fill(null),
-    };
     this.clickAction = this.clickAction.bind(this);
   }
 
   
   renderSquare(i) {
-    console.log(this.state.squares)
+    // console.log(this.props.squares)
     return <Square 
               team={this.props.player} 
-              value={this.state.squares[i]} 
+              value={this.props.squares[i]} 
               clickHandle={(player) => this.clickAction(i, player)}
             />;
   }
 
   clickAction(i, player) {
-    if (this.ifComplete()) {
+    if (false) {
       console.log("Game over!")
-      
     } else {
       this.props.nextPlayer();
-      const squares = this.state.squares.slice();
+      const squares = this.props.squares.slice();
       squares[i] = player;
       this.setState({squares: squares})
       // this.state.squares is a virtual version of the game at play
 
     }
   }
-
-  ifComplete() {
-    return this.state.squares.includes('null')
-    // returns true if game still at play, false if all squares filled
-  }
-
-
 
   render() {
     return (
